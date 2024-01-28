@@ -1,1 +1,9 @@
 # Home_Sales
+
+In this assignment, I looked at the home sales data from the provided csv file. After importing the required PySpark SQL functions, I the read the csv file into a Spark DataFrame and created a temporary table and names it 'home_sales'. I then queried the table to answer the following questions:
+    - What is the average price for a four-bedroom house sold for each year? Round off your answer to two decimal places.
+    - What is the average price of a home for each year it was built that has three bedrooms and three bathrooms? Round off your answer to two decimal places.
+    - What is the average price of a home for each year that has three bedrooms, three bathrooms, two floors, and is greater than or equal to 2,000 square feet? Round off your answer to two decimal places.
+    - What is the "view" rating for homes costing more than or equal to $350,000? Determine the run time for this query, and round off your answer to two decimal places.
+Following this, I cached the temporary table 'home_sales' and checked if it was in fact cached. I then ran a query that filtered out the view ratings with an average price greater than or equal to $350,000, and determined the run time for the query as well.
+The data was partitioned on the 'date_built' field on the formatted parquet home sales data. I created a temporary table to view the parquet data. I ran a query that filtered out the view ratings with an average price of greater than or equal to $350,000 and determined the run time, the uncached data took longer to run than the cached parquet data. The 'home_sales' table was then uncached and it was verified that the table was uncached using PySpark. 
